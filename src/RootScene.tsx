@@ -1,7 +1,9 @@
 import React from 'react'
 import {Router, Scene} from 'react-native-router-flux'
+import { colors } from './constants/colors'
 import LogInScreen from './LogInScreen'
 import StreamScreen from './Stream'
+import StreamRoom from './StreamRoom'
 
 export default function RootScene() {
   return (
@@ -16,9 +18,18 @@ export default function RootScene() {
         />
         <Scene
           gesturesEnabled={false}
-          key="conversationsScreen"
+          key="streamScreen"
           component={StreamScreen}
-          hideNavBar
+          navBarButtonColor={colors.white}
+          title='Streams'
+          titleStyle={{color: colors.white}}
+        />
+        <Scene
+          key='streamRoom'
+          component={StreamRoom}
+          navBarButtonColor={colors.white}
+          title='Stream Room'
+          titleStyle={{color: colors.white}}
         />
       </Scene>
     </Router>

@@ -6,14 +6,15 @@ import {
 import {Provider} from 'react-redux';
 import store from './features/reducers/store';
 import RootScene from './RootScene';
-
-declare const global: {HermesInternal: null | {}};
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
     <Provider store={store}>
       {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
-      <RootScene />
+      <NavigationContainer>
+        <RootScene />
+      </NavigationContainer>
     </Provider>
   );
 };
