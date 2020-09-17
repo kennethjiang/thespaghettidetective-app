@@ -61,7 +61,7 @@ const LogInScreen = () => {
 
   return <WebView
     ref={webViewRef}
-    source={{ uri: 'https://app.thespaghettidetective.com/accounts/login/' }}
+    source={{ uri: 'https://app.stg.thespaghettidetective.com/mobile/login/' }}
     onNavigationStateChange={onNavigationStateChange}
     onMessage={onMessage}
   />
