@@ -16,7 +16,7 @@ import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes';
 import { setCookieAction } from '../features/reducers/streams';
 
 const CHECK_COOKIE: string = `
-  ReactNativeWebView.postMessage(document.cookie);
+  ReactNativeWebView.postMessage(document.getElementById("view").textContent);
   true;
 `;
 
@@ -26,7 +26,7 @@ const onNavigationStateChange = async (navigationState: WebViewNavigation) => {
   if (webViewRef.current) {
     webViewRef.current.injectJavaScript(CHECK_COOKIE);
   }
-  if (navigationState.url === 'https://app.thespaghettidetective.com/printers/') {
+  if (navigationState.url === 'http://app.stg.thespaghettidetective.com/printers/') {
     try {
       //if (Actions.currentScene !== 'streamScreen') Actions.streamScreen()
       //createSocket()
